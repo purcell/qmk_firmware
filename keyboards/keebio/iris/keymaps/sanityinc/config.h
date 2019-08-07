@@ -30,3 +30,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SPLIT
 #define RGBLIGHT_SLEEP
 #define MOUSEKEY_MAX_SPEED 20
+#define MOUSEKEY_WHEEL_MAX_SPEED 4
