@@ -50,6 +50,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+//////////////////////////////////////////////////////////////////////////////
+// QMK user hooks
+//////////////////////////////////////////////////////////////////////////////
+
+uint32_t layer_state_set_user(uint32_t state) {
+  switch (biton32(state)) {
+  case 1: rgblight_sethsv_noeeprom_green(); break;
+  case 2: rgblight_sethsv_noeeprom_magenta(); break;
+  default: //  for any other layers, or the default layer
+    rgblight_sethsv_noeeprom_blue(); break;
+  }
+  return state;
+}
+
+void keyboard_post_init_user(void) {
+  // Set default led colours.
+  rgblight_enable_noeeprom(); // enables RGB, without saving settings
+  rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 1); // sets mode to Fast breathing without saving
+  rgblight_sethsv_noeeprom_blue();
+}
+
 /* Local Variables: */
 /* compile-command: "cd ../../../../.. && make keebio/iris/rev3:sanityinc:dfu" */
 /* End: */
