@@ -118,10 +118,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint32_t layer_state_set_user(uint32_t state) {
   switch (biton32(state)) {
   case _LOWER: rgblight_sethsv_noeeprom_green(); break;
-  case _RAISE: rgblight_sethsv_noeeprom_magenta(); break;
-  case _ADJUST: rgblight_sethsv_noeeprom_yellow(); break;
+  case _RAISE: rgblight_sethsv_noeeprom_yellow(); break;
+  case _ADJUST: rgblight_sethsv_noeeprom_red(); break;
   default: //  for any other layers, or the default layer
-    rgblight_sethsv_noeeprom_blue(); break;
+    rgblight_sethsv_noeeprom_purple(); break;
   }
   return state;
 }
@@ -130,7 +130,7 @@ void keyboard_post_init_user(void) {
   // Set default led colours.
   rgblight_enable_noeeprom(); // enables RGB, without saving settings
   rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 1); // sets mode to Fast breathing without saving
-  rgblight_sethsv_noeeprom_blue();
+  rgblight_sethsv_noeeprom_purple();
 }
 
 /* Local Variables: */
