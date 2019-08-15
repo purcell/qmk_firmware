@@ -118,9 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint32_t layer_state_set_user(uint32_t state) {
   switch (biton32(state)) {
-  case ADJ: rgblight_sethsv_noeeprom_red(); break;
+  case ADJ: rgblight_sethsv_noeeprom_yellow(); break;
   case MOU: rgblight_sethsv_noeeprom_teal(); break;
-  case RAI: rgblight_sethsv_noeeprom_yellow(); break;
+  case RAI: rgblight_sethsv_noeeprom_red(); break;
   case LWR: rgblight_sethsv_noeeprom_green(); break;
   default: //  for any other layers, or the default layer
     rgblight_sethsv_noeeprom_purple(); break;
