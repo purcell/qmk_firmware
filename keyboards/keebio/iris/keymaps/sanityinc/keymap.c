@@ -14,9 +14,9 @@ extern keymap_config_t keymap_config;
 #define HUSH KC__MUTE
 
 #define SFT_ENT RSFT_T(KC_ENT)
-#define LWR_BSPC LT(LWR, KC_BSPC)
-#define RAI_SPC LT(RAI, KC_SPC)
-#define CTL_MIN RCTL_T(KC_MINS)
+#define GUI_BSPC LGUI_T(KC_BSPC)
+#define CTL_SPC RCTL_T(KC_SPC)
+#define RAI_MIN LT(RAI, KC_MINS)
 #define LCAG_EQL LCAG_T(KC_EQL)
 
 enum layers { QWERTY, LWR, RAI, MOU, ADJ};
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC,          KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_ENT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LALT, KC_LGUI, LWR_BSPC,                  RAI_SPC, CTL_MIN, LCAG_EQL
+                                    KC_LALT, MO(LWR), GUI_BSPC,                  CTL_SPC, RAI_MIN, LCAG_EQL
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
