@@ -155,7 +155,7 @@ void keyboard_post_init_user(void) {
   // Set default led colours.
   rgblight_enable_noeeprom(); // enables RGB, without saving settings
   rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 1); // sets mode to Fast breathing without saving
-  rgblight_sethsv_noeeprom_purple();
+  layer_state_set_user(0);
 }
 
 /* Local Variables: */
