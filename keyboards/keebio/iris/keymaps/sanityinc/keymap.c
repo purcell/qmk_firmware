@@ -159,5 +159,5 @@ void keyboard_post_init_user(void) {
 }
 
 /* Local Variables: */
-/* compile-command: "cd ../../../../.. && make keebio/iris/rev3:sanityinc:dfu" */
+/* compile-command: "cd ../../../../.. && (test -f lib/lufa/LUFA/makefile || make git-submodule) && make keebio/iris/rev3:sanityinc:dfu" */
 /* End: */
