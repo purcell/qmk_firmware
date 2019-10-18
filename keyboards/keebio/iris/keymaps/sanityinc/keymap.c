@@ -48,6 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
+  // Here it looks like I accidentally and independently invented the
+  // right hand side of the "extend" layer mentioned at
+  // https://colemakmods.github.io/ergonomic-mods/extend.html
   [LWR] = LAYOUT_kc(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
       ESC    ,        ,        ,        ,        ,        ,                                   ,        ,        ,        ,        ,  DEL   ,
