@@ -29,6 +29,9 @@ enum layers { QWERTY, LWR, RAI, NUM, MOU, ADJ};
 // Hack for blanks
 #define KC_ KC_TRNS
 
+// TODO: try oneshot modifiers, or even modifiers on the home row,
+// e.g. https://geekhack.org/index.php?topic=95683.0
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [QWERTY] = LAYOUT_kc(
