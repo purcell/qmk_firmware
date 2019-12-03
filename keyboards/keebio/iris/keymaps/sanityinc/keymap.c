@@ -26,6 +26,15 @@ enum layers { QWERTY, LWR, RAI, NUM, MOU, ADJ};
 #define KC_RESET RESET
 #define KC_RGB_TOG RGB_TOG
 
+#define KC_A_SFT LSFT_T(KC_A)
+#define KC_S_CTL LCTL_T(KC_S)
+#define KC_D_ALT LALT_T(KC_D)
+#define KC_F_GUI LGUI_T(KC_F)
+#define KC_J_GUI RGUI_T(KC_J)
+#define KC_K_ALT RALT_T(KC_K)
+#define KC_L_CTL RCTL_T(KC_L)
+#define KC_SCLN_SFT RSFT_T(KC_SCLN)
+
 // Hack for blanks
 #define KC_ KC_TRNS
 
@@ -40,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      TAB_NUM ,   Q    ,   W    ,   E    ,   R    ,   T    ,                              Y    ,   U    ,   I    ,   O    ,   P    ,  BSLS  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      LCTL   ,   A    ,   S    ,   D    ,   F    ,   G    ,                              H    ,   J    ,   K    ,   L    ,  SCLN  ,  QUOT  ,
+      LCTL   , A_SFT  , S_CTL  , D_ALT  , F_GUI  ,   G    ,                              H    , J_GUI  , K_ALT  , L_CTL  ,SCLN_SFT,  QUOT  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
       LSFT   ,   Z    ,   X    ,   C    ,   V    ,   B    , LBRC   ,          RBRC   ,   N    ,   M    , COMM   ,  DOT   ,  SLSH  ,SFT_ENT ,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -160,7 +169,7 @@ uint32_t layer_state_set_user(uint32_t state) {
 void keyboard_post_init_user(void) {
   // Set default led colours.
   rgblight_enable_noeeprom(); // enables RGB, without saving settings
-  rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 1); // sets mode to Fast breathing without saving
+  rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 2); // sets mode to Fast breathing without saving
   layer_state_set_user(0);
 }
 
