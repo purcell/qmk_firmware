@@ -43,17 +43,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * | Ctrl | Alt  | GUI  | SUP  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 #define SUPER LCAG_T(KC_TRNS)
 #define SPCCTL LCTL_T(KC_SPACE)
 
+#define KC_SFT_ENT RSFT_T(KC_ENT)
+#define KC_A_SFT LSFT_T(KC_A)
+#define KC_S_CTL LCTL_T(KC_S)
+#define KC_D_ALT LALT_T(KC_D)
+#define KC_F_GUI LGUI_T(KC_F)
+#define KC_J_GUI RGUI_T(KC_J)
+#define KC_K_ALT RALT_T(KC_K)
+#define KC_L_CTL RCTL_T(KC_L)
+#define KC_SCLN_SFT RSFT_T(KC_SCLN)
+
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-    KC_LCTL, KC_LALT, KC_LGUI, SUPER,   LOWER,   KC_LGUI, SPCCTL,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_TAB,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,    KC_Y,    KC_U,     KC_I,     KC_O,     KC_P,        KC_BSPC,
+    KC_ESC,  KC_A_SFT, KC_S_CTL, KC_D_ALT, KC_F_GUI, KC_G,    KC_H,    KC_J_GUI, KC_K_ALT, KC_L_CTL, KC_SCLN_SFT, KC_QUOT,
+    KC_LSFT, KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,    KC_N,    KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,     KC_SFT_ENT,
+    KC_LCTL, KC_LALT,  KC_LGUI,  SUPER,    KC_LGUI,  LOWER,   SPCCTL,  RAISE,    KC_LEFT,  KC_DOWN,  KC_UP,       KC_RGHT
 ),
 
 /* Lower
