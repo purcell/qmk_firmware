@@ -36,7 +36,6 @@ enum planck_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #define KC_SUPER LCAG_T(KC_TRNS)
-#define KC_SPCCTL LCTL_T(KC_SPACE)
 
 #define KC_SFT_ENT RSFT_T(KC_ENT)
 #define KC_A_SFT LSFT_T(KC_A)
@@ -59,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     LSFT   ,    Z   ,    X   ,    C   ,    V   ,    B   ,    N   ,    M   ,  COMM  ,  DOT   ,  SLSH  , SFT_ENT,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LWR_MIN, SPCCTL , RAI_EQL,  LEFT  ,  DOWN  ,   UP   ,  RGHT
+    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LWR_MIN,  SPACE , RAI_EQL,  LEFT  ,  DOWN  ,   UP   ,  RGHT
 //└────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
 ),
 
