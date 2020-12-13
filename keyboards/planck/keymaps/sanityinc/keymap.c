@@ -30,8 +30,8 @@ enum planck_keycodes {
   BACKLIT,
 };
 
-#define KC_LOWER MO(_LOWER)
-#define KC_RAI_MIN LT(_RAISE, KC_MINS)
+#define KC_LWR_MIN LT(_LOWER, KC_MINS)
+#define KC_RAI_EQL LT(_RAISE, KC_EQL)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -59,31 +59,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     LSFT   ,    Z   ,    X   ,    C   ,    V   ,    B   ,    N   ,    M   ,  COMM  ,  DOT   ,  SLSH  , SFT_ENT,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LOWER  , SPCCTL , RAI_MIN,  LEFT  ,  DOWN  ,   UP   ,  RGHT
+    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LWR_MIN, SPCCTL , RAI_EQL,  LEFT  ,  DOWN  ,   UP   ,  RGHT
 //└────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
 ),
 
 [_LOWER] = LAYOUT_kc(
 //┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┐
-    TILD   , EXLM   ,  AT    ,  HASH  ,  DLR   ,  PERC  ,  CIRC  ,  AMPR  ,  ASTR  ,  LPRN  ,  RPRN  ,  BSPC  ,
+           ,        ,        ,        ,        ,        ,        ,        ,  HOME  ,   UP   ,   END  ,   DEL  ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     DEL   ,   F1   ,   F2   ,   F3   ,   F4   ,   F5   ,   F6   ,  UNDS  ,  PLUS  ,  LCBR  ,  RCBR  ,  PIPE  ,
+           ,   F1   ,   F2   ,   F3   ,   F4   ,   F5   ,   F6   ,        ,  LEFT  ,  DOWN  ,  RGHT  ,  PIPE  ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           ,   F7   ,   F8   ,   F9   ,  F10   ,  F11   ,  F12   ,        ,        ,  HOME  ,   END  ,        ,
+           ,   F7   ,   F8   ,   F9   ,  F10   ,  F11   ,  F12   ,        ,        ,        ,        ,        ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           ,        ,        ,        ,        ,        ,        ,        ,  MNXT  ,  VOLD  ,  VOLU  ,  MPLY
+           ,        ,        ,        ,        ,        ,        ,        ,  HOME  ,  PGDN  ,  PGUP  ,   END
 //└────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
 ),
 
 [_RAISE] = LAYOUT_kc(
 //┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┐
-     GRV   ,    1   ,    2   ,    3   ,    4   ,    5   ,    6   ,    7   ,    8   ,    9   ,    0   ,  BSPC  ,
+     GRV   ,    1   ,    2   ,    3   ,    4   ,    5   ,    6   ,    7   ,    8   ,    9   ,    0   ,   DEL  ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     DEL   ,   F1   ,   F2   ,   F3   ,   F4   ,   F5   ,   F6   ,  MINS  ,   EQL  ,  LBRC  ,  RBRC  ,  BSLS  ,
+    TILD   ,  EXLM  ,   AT   ,  HASH  ,  DLR   ,  PERC  ,  CIRC  ,  AMPR  ,  ASTR  ,  LPRN  ,  RPRN  ,  BSLS  ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           ,   F7   ,   F8   ,   F9   ,  F10   ,  F11   ,  F12   ,  NUHS  ,  NUBS  ,  PGUP  ,  PGDN  ,        ,
+           ,        ,        ,        ,        ,        ,        ,  LBRC  ,  RBRC  ,  LCBR  ,  RCBR  ,        ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           ,        ,        ,        ,        ,        ,        ,        ,  MNXT  ,  VOLD  ,  VOLU  ,  MPLY
+           ,        ,        ,        ,        ,        ,        ,        ,        ,        ,        ,
 //└────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
 ),
 
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
     _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______, _______,  _______, _______, _______,
     _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, _______, _______,  KC_VOLD, KC_VOLU, _______
 )
 
 };
@@ -237,8 +237,8 @@ void matrix_scan_user(void) {
 
 bool music_mask_user(uint16_t keycode) {
   switch (keycode) {
-    case KC_RAI_MIN:
-    case KC_LOWER:
+    case KC_RAI_EQL:
+    case KC_LWR_MIN:
       return false;
     default:
       return true;
