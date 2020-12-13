@@ -31,7 +31,7 @@ enum planck_keycodes {
 };
 
 #define KC_LOWER MO(_LOWER)
-#define KC_RAISE MO(_RAISE)
+#define KC_RAI_MIN LT(_RAISE, KC_MINS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     LSFT   ,    Z   ,    X   ,    C   ,    V   ,    B   ,    N   ,    M   ,  COMM  ,  DOT   ,  SLSH  , SFT_ENT,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LOWER  , SPCCTL , RAISE  ,  LEFT  ,  DOWN  ,   UP   ,  RGHT
+    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LOWER  , SPCCTL , RAI_MIN,  LEFT  ,  DOWN  ,   UP   ,  RGHT
 //└────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
 ),
 
@@ -237,7 +237,7 @@ void matrix_scan_user(void) {
 
 bool music_mask_user(uint16_t keycode) {
   switch (keycode) {
-    case KC_RAISE:
+    case KC_RAI_MIN:
     case KC_LOWER:
       return false;
     default:
