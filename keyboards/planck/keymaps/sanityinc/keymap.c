@@ -1,19 +1,3 @@
-/* Copyright 2015-2017 Jack Humbert
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include QMK_KEYBOARD_H
 #include "muse.h"
 
@@ -30,8 +14,9 @@ enum planck_keycodes {
   BACKLIT,
 };
 
-#define KC_LWR_MIN LT(_LOWER, KC_MINS)
-#define KC_RAI_EQL LT(_RAISE, KC_EQL)
+#define KC_LWR_EQL LT(_LOWER, KC_EQL)
+#define KC_RAI_MIN LT(_RAISE, KC_MINS)
+#define KC_CTL_SPC LCTL_T(KC_SPACE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -58,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     LSFT   ,    Z   ,    X   ,    C   ,    V   ,    B   ,    N   ,    M   ,  COMM  ,  DOT   ,  SLSH  , SFT_ENT,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LWR_MIN,  SPACE , RAI_EQL,  LEFT  ,  DOWN  ,   UP   ,  RGHT
+    LCTL   ,  LALT  ,  LGUI  , SUPER  ,  LGUI  , LWR_EQL, CTL_SPC, RAI_MIN,  LEFT  ,  DOWN  ,   UP   ,  RGHT
 //└────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
 ),
 
@@ -236,8 +221,8 @@ void matrix_scan_user(void) {
 
 bool music_mask_user(uint16_t keycode) {
   switch (keycode) {
-    case KC_RAI_EQL:
-    case KC_LWR_MIN:
+    case KC_RAI_MIN:
+    case KC_LWR_EQL:
       return false;
     default:
       return true;
