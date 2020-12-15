@@ -17,20 +17,13 @@ enum planck_keycodes {
 #define KC_LWR_EQL LT(_LOWER, KC_EQL)
 #define KC_RAI_MIN LT(_RAISE, KC_MINS)
 #define KC_CTL_SPC LCTL_T(KC_SPACE)
+#define KC_ESC_CTL LCTL_T(KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #define KC_SUPER LCAG_T(KC_TRNS)
 
 #define KC_SFT_ENT RSFT_T(KC_ENT)
-#define KC_A_SFT LSFT_T(KC_A)
-#define KC_S_CTL LCTL_T(KC_S)
-#define KC_D_ALT LALT_T(KC_D)
-#define KC_F_GUI LGUI_T(KC_F)
-#define KC_J_GUI RGUI_T(KC_J)
-#define KC_K_ALT RALT_T(KC_K)
-#define KC_L_CTL RCTL_T(KC_L)
-#define KC_SCLN_SFT RSFT_T(KC_SCLN)
 
 // Hack for blanks
 #define KC_ KC_TRNS
@@ -39,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┐
     TAB    ,    Q   ,    W   ,    E   ,    R   ,    T   ,    Y   ,    U   ,    I   ,   O    ,    P   ,  BSPC  ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    ESC    ,  A_SFT ,  S_CTL , D_ALT  , F_GUI  ,    G   ,    H   , J_GUI  , K_ALT  , L_CTL  ,SCLN_SFT,  QUOT  ,
+    ESC_CTL,    A   ,    S   ,    D   ,    F   ,    G   ,    H   ,    J   ,    K   ,    L   ,  SCLN  ,  QUOT  ,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     LSFT   ,    Z   ,    X   ,    C   ,    V   ,    B   ,    N   ,    M   ,  COMM  ,  DOT   ,  SLSH  , SFT_ENT,
 //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
